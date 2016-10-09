@@ -30,7 +30,7 @@ Inside each module you can find a brief doc around them.
 ## How to run
 1. Fork the project
 2. Build: `mvn install`
-3. Before running docker make sure all exposed ports in the docker compose file are really available
+3. Before running docker make sure all exposed ports in the [docker compose file](https://github.com/carlosraphael/trade-processor/blob/master/docker-compose.yml) are really available
 4. Run *docker-compose* to start up all services together: `docker-compose up`
 5. Allow some seconds until all services are running and properly registered within Service Discovery
 
