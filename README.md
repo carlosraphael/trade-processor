@@ -12,13 +12,13 @@ Here're some patterns related to microservice:
 
 With this in mind the trade processor was split into the following Maven modules:
 
-* config
-* registry
-* gateway
-* auth-service
-* trade-consumption
-* trade-processing
-* monitoring 
+* [config](https://github.com/carlosraphael/trade-processor/tree/master/config)
+* [registry](https://github.com/carlosraphael/trade-processor/tree/master/registry)
+* [gateway](https://github.com/carlosraphael/trade-processor/tree/master/gateway)
+* [auth-service](https://github.com/carlosraphael/trade-processor/tree/master/auth-service)
+* [trade-consumption](https://github.com/carlosraphael/trade-processor/tree/master/trade-consumption)
+* [trade-processing](https://github.com/carlosraphael/trade-processor/tree/master/trade-processing)
+* [monitoring](https://github.com/carlosraphael/trade-processor/tree/master/monitoring)
 
 Inside each module you can find a brief doc around them.
 
