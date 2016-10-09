@@ -41,7 +41,7 @@ Now you've got everything up and running you **must authenticate** in order to b
 * Password: **demo**
 * Endpoint: **http://docker-host:8080/uaa/oauth/token**
 
-Using Postman to get oauth token:
+Using Postman to get access token:
 
 ![Postman token](https://github.com/carlosraphael/trade-processor/blob/master/postman_oauth2_token.PNG)
 
