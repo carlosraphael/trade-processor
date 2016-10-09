@@ -1,0 +1,11 @@
+security:
+  oauth2:
+    client:
+      clientId: registry
+      clientSecret: pass
+      accessTokenUri: http://gateway:4000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+
+server:
+  port: 8761

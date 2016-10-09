@@ -1,0 +1,115 @@
+version: '2'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - 15672:15672
+      - 5672:5672
+      - 25672:25672
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  config:
+    build: ./config
+    image: trade-config
+    restart: always
+    links:
+      - rabbitmq
+    ports:
+      - 8888:8888
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  registry:
+    build: ./registry
+    image: trade-registry
+    restart: always
+    ports:
+      - 8761:8761
+    links:
+      - config
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  gateway:
+    build: ./gateway
+    image: trade-gateway
+    restart: always
+    ports:
+      - 8080:4000
+    links:
+      - registry
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: trade
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    build: ./mysql
+    image: trade-mysql
+    restart: always
+    ports:
+      - 3306:3306
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  auth-service:
+    build: ./auth-service
+    image: trade-auth-service
+    restart: always
+    links:
+      - registry
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  consumption-service:
+    build: ./trade-consumption
+    image: trade-consumption-service
+    restart: always
+    links:
+      - registry
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  processor-service:
+    build: ./trade-processing
+    image: trade-processing-service
+    restart: always
+    links:
+      - registry
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  monitoring:
+    build: ./monitoring
+    image: trade-monitoring
+    restart: always
+    ports:
+      - 9000:8080
+      - 8989:8989
+    links:
+      - registry
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"

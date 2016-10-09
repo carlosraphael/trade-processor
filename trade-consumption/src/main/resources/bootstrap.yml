@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: trade-consumption
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: true

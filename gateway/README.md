@@ -1,0 +1,4 @@
+# API Gateway
+Here's the single entry point into the whole system. It handles requests by routing them to the appropriate backend service or by invoking multiple backend services and [aggregating the results](http://techblog.netflix.com/2013/01/optimizing-netflix-api.html). Also, it can be used for authentication, insights, stress and canary testing, service migration, static response handling.
+
+[Netflix has opensourced Zuul](http://techblog.netflix.com/2013/06/announcing-zuul-edge-service-in-cloud.html) its edge service and with [Spring Cloud](http://cloud.spring.io/spring-cloud-netflix/) we can easily enable it with a simple `@EnableZuulProxy` annotation.

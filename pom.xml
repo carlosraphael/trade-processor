@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.carlosraphael.trade</groupId>
+	<artifactId>trade-processor</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>trade-processor</name>
+	<description>Market Trade Processor</description>
+
+	<scm>
+		<url>https://github.com/carlosraphael/trade-processor</url>
+		<connection>scm:git:git://github.com/carlosraphael/trade-processor.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/carlosraphael/trade-processor.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<modules>
+		<module>common</module>
+		<module>config</module>
+		<module>monitoring</module>
+		<module>registry</module>
+		<module>gateway</module>
+		<module>auth-service</module>
+		<module>trade-consumption</module>
+		<module>trade-processing</module>
+	</modules>
+</project>

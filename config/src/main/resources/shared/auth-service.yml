@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    show-sql: false
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    initialize: true
+    name: auth-service
+    url: jdbc:mysql://mysql:3306/trade
+    username: root
+    password: root
+    hikari:
+      auto-commit: false
+      initialization-fail-fast: true
+      minimum-idle: 5
+      maximum-pool-size: 100
+      connection-test-query: select 1
+
+server:
+  context-path: /uaa
+  port: 5000

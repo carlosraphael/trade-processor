@@ -1,0 +1,16 @@
+server:
+  port: 0
+
+spring:
+  jpa:
+    show-sql: false
+    generate-ddl: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    initialize: false
+    name: trade-consumption
+    hikari:
+      auto-commit: false
+      initialization-fail-fast: true
+      minimum-idle: 1
+      maximum-pool-size: 5

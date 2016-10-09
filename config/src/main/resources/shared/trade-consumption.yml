@@ -1,0 +1,31 @@
+security:
+  oauth2:
+    client:
+      clientId: trade-consumption
+      clientSecret: pass
+      accessTokenUri: http://gateway:4000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+
+spring:
+  jpa:
+    show-sql: false
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    initialize: true
+    name: trade-consumption
+    url: jdbc:mysql://mysql:3306/trade
+    username: root
+    password: root
+    hikari:
+      auto-commit: false
+      initialization-fail-fast: true
+      minimum-idle: 5
+      maximum-pool-size: 100
+      connection-test-query: select 1
+
+server:
+  context-path: /consumption
+  port: 7100
